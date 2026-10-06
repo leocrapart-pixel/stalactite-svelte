@@ -1,0 +1,13 @@
+{
+  // The SvelteKit build is a static site: adapter-static prerenders it to plain
+  // files, and this Worker's only job is to serve them.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stalactite-svelte",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./build",
+    // The app is client-rendered, so unknown paths should return the shell
+    // rather than a bare 404.
+    "not_found_handling": "single-page-application"
+  }
+}
