@@ -86,17 +86,26 @@ Comparing two implementations found three real defects, which were fixed in
    growing past that was invisible while the shape law still reported a longer
    formation. The modelled depth is now clamped to the grid.
 
-## Deploy
+## Deployed
+
+Live at **https://stalactite-svelte.stalactite.workers.dev**, beside the
+[Elm version](https://stalactite.stalactite.workers.dev) at
+[github.com/leocrapart-pixel/stalactite](https://github.com/leocrapart-pixel/stalactite).
 
 `wrangler.jsonc` deploys it as a Worker serving static assets, the same pattern
-as the Elm version. It is deliberately a **separate Worker name**
-(`stalactite-svelte`) so the two implementations can sit side by side:
+as the Elm version, under a **separate Worker name** (`stalactite-svelte`) so the
+two can be compared side by side.
 
 ```sh
-export CLOUDFLARE_API_TOKEN=...
-export CLOUDFLARE_ACCOUNT_ID=...
+export CLOUDFLARE_API_TOKEN=...      # token with the "Edit Cloudflare Workers" template
+export CLOUDFLARE_ACCOUNT_ID=...     # `npx wrangler whoami` prints it
 npm run build && npx wrangler deploy
+npm run verify:deploy                # confirm the live site matches build/
 ```
+
+`verify:deploy` fetches the shell and the whole ES module graph from the live
+site, hashes each module and compares against `build/`. A deploy that uploaded
+stale or partial assets fails there rather than in the browser.
 
 ## Caveats
 
