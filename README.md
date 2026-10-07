@@ -4,6 +4,11 @@ A SvelteKit port of the Elm app in the parent directory. Same physics, same
 scene, same instrument panel; the model is reproduced formula-for-formula and
 pinned to the Elm build by a parity test.
 
+One of four implementations of the same thing, alongside
+[Elm](https://github.com/leocrapart-pixel/stalactite),
+[Angular](https://github.com/leocrapart-pixel/stalactite-angular) and
+[Vue](https://github.com/leocrapart-pixel/stalactite-vue).
+
 ## Run it
 
 ```sh
@@ -89,8 +94,9 @@ Comparing two implementations found three real defects, which were fixed in
 ## Deployed
 
 Live at **https://stalactite-svelte.stalactite.workers.dev**, beside the
-[Elm version](https://stalactite.stalactite.workers.dev) and the
-[Angular version](https://stalactite-angular.stalactite.workers.dev).
+[Elm](https://stalactite.stalactite.workers.dev),
+[Angular](https://stalactite-angular.stalactite.workers.dev) and
+[Vue](https://stalactite-vue.stalactite.workers.dev) versions.
 
 `wrangler.jsonc` deploys it as a Worker serving static assets, the same pattern
 as the Elm version, under a **separate Worker name** (`stalactite-svelte`) so the
