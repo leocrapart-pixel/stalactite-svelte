@@ -89,8 +89,8 @@ Comparing two implementations found three real defects, which were fixed in
 ## Deployed
 
 Live at **https://stalactite-svelte.stalactite.workers.dev**, beside the
-[Elm version](https://stalactite.stalactite.workers.dev) at
-[github.com/leocrapart-pixel/stalactite](https://github.com/leocrapart-pixel/stalactite).
+[Elm version](https://stalactite.stalactite.workers.dev) and the
+[Angular version](https://stalactite-angular.stalactite.workers.dev).
 
 `wrangler.jsonc` deploys it as a Worker serving static assets, the same pattern
 as the Elm version, under a **separate Worker name** (`stalactite-svelte`) so the
